@@ -1,0 +1,2 @@
+"D:\Program\phone\LDPlayer4\ldconsole.exe" runapp --index 0 --packagename
+"D:\Program\phone\LDPlayer4\ld.exe" -s 0 pm list packages

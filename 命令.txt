@@ -1,0 +1,11 @@
+生成软件命令
+rm -r ./dist &
+pyinstaller main.py --noconsole --hidden-import PySide2.QtXml --icon="./img/logo.ico" --paths="D:\Develop\Program\Python\Anaconda3\envs\python38\Lib\site-packages\cv2" -y &
+cp ./img .\dist\main\ -r &
+cp ./main.ui .\dist\main\main.ui
+
+
+
+键盘输入命令
+D:/Program/Phone/LDPlayer64/ld.exe -s 0 input keyevent 13
+
