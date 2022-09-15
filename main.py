@@ -6,7 +6,7 @@ import time
 
 from PySide2 import QtWidgets
 from PySide2.QtGui import QIcon
-from PySide2.QtWidgets import QApplication, QMessageBox, QTableWidgetItem, QAbstractItemView
+from PySide2.QtWidgets import QApplication, QMessageBox, QTableWidgetItem, QAbstractItemView, QHeaderView
 from PySide2.QtUiTools import QUiLoader
 from Dnconsole import Dnconsole
 from TFTStartModel import TFTStartModel
@@ -141,8 +141,10 @@ class MainModel:
             self.ui.tableWidget.setItem(index, 2, col_3)
             self.ui.tableWidget.update()
 
-        # 禁止编辑
-        self.ui.tableWidget.horizontalHeader().setStretchLastSection(True)
+        # 自动拉升最后一列
+        # self.ui.tableWidget.horizontalHeader().setStretchLastSection(True)
+        # 每一列都拉伸, 使用QHeaderView的setSectionResizeMode函数，将resizemode设置为QHeaderView::Stretch。
+        self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         # 禁止编辑
         self.ui.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
         # 只允许单行选中
