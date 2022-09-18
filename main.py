@@ -9,8 +9,8 @@ from PySide2.QtGui import QIcon
 from PySide2.QtWidgets import QApplication, QMessageBox, QTableWidgetItem, QAbstractItemView, QHeaderView
 from PySide2.QtUiTools import QUiLoader
 from Dnconsole import Dnconsole
-from TFTStartModel import TFTStartModel
 from model.func import stop_thread
+from task.TestTask import TestTask
 
 
 class MainModel:
@@ -31,8 +31,8 @@ class MainModel:
         :return:
         """
         self.getVM()
-        # time.sleep(3)
-        Dnconsole.dnld(self.index, 'screencap -p /sdcard/Pictures/' + str(int(time.time())) + '.png')
+        # ' + str(int(time.time())) + '
+        Dnconsole.dnld(self.index, 'screencap -p /mnt/shared/Pictures/' + str(self.index) + 'screencap.png')
 
     def setupButtonHandle(self):
         """
@@ -42,8 +42,6 @@ class MainModel:
         self.setupUI = QUiLoader().load('setup.ui')
         self.setupUI.show()
 
-
-
     def pauseButtonHandle(self):
         """
         暂停 继续 处理
@@ -51,10 +49,9 @@ class MainModel:
         """
         dn = Dnconsole
         self.getVM()
-        self.startList[self.index].Pause()
+        self.startList[self.index].pause()
         arr = ["未开始", "暂停", "继续"]
         self.ui.pauseButton.setText(arr[self.startList[self.index].status])
-        print(arr[self.startList[self.index].status])
 
     def stopButtonHandle(self):
         """
@@ -63,7 +60,7 @@ class MainModel:
         """
         self.getVM()
         # 停止所有子线程
-        self.startList[self.index].GameOver()
+        self.startList[self.index].game_over()
         # 停止主线程
         stop_thread(self.threadingtList[self.index])
         print("停止游戏")
@@ -87,12 +84,12 @@ class MainModel:
         """
         dn = Dnconsole
         self.getVM()
-        dn.set_window_size(self.vm.top_win_handler)
-        start = TFTStartModel(self.vm, self.index)
+        # dn.set_window_size(self.vm.top_win_handler)
+        start = TestTask(self.vm, self.index)
         self.startList[self.index] = start
         # start.CheckState()
         # 创建线程
-        self.threadingtList[self.index] = threading.Thread(target=start.StartGame, args=())
+        self.threadingtList[self.index] = threading.Thread(target=start.start_game(), args=())
         # 启动线程
         self.threadingtList[self.index].start()
 
@@ -162,7 +159,7 @@ class MainModel:
 
 app = QApplication([])
 # 加载 icon
-app.setWindowIcon(QIcon('logo.jpeg'))
+app.setWindowIcon(QIcon('./img/logo.ico'))
 stats = MainModel()
 stats.ui.show()
 app.exec_()

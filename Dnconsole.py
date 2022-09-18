@@ -17,11 +17,11 @@ from File import getDocuments
 
 class Dnconsole:
     # 请根据自己电脑配置
-    console = r'D:/Program/Phone/LDPlayer64/ldconsole.exe '
-    ld = r'D:/Program/Phone/LDPlayer64/ld.exe '
+    console = r'D:\Develop\Program\Android\LDPlayer4/ldconsole.exe '
+    ld = r'D:\Develop\Program\Android\LDPlayer4/ld.exe '
     # console = r'D:\Program\phone\LDPlayer4/ldconsole.exe '
     # ld = r'D:\Program\phone\LDPlayer4/ld.exe '
-    share_path = getDocuments() + r"/leidian64/Pictures"
+    share_path = getDocuments() + r"/leidian/Pictures"
 
     # 获取模拟器列表
     @staticmethod
@@ -72,6 +72,7 @@ class Dnconsole:
     @staticmethod
     def dnld(index: int, command: str, silence: bool = True):
         cmd = Dnconsole.ld + '-s %d %s' % (index, command)
+        print(cmd)
         if silence:
             subprocess.call(cmd, shell=True)
             return ''

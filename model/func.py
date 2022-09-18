@@ -17,7 +17,8 @@ def _async_raise(tid, exctype):
         exctype = type(exctype)
     res = ctypes.pythonapi.PyThreadState_SetAsyncExc(tid, ctypes.py_object(exctype))
     if res == 0:
-        raise ValueError("invalid thread id")
+        # raise ValueError("invalid thread id")
+        print("invalid thread id")
     elif res != 1:
         """
         如果返回的数字大于1，则说明您遇到了麻烦，您应该使用exc=NULL再次调用它以恢复效果
