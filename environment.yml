@@ -1,0 +1,37 @@
+name: py381
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - defaults
+dependencies:
+  - altgraph=0.17.2=pyhd8ed1ab_1
+  - ca-certificates=2022.9.14=h5b45459_0
+  - certifi=2022.9.14=pyhd8ed1ab_0
+  - future=0.18.2=py38haa244fe_5
+  - libzlib=1.2.12=h8ffe710_2
+  - macholib=1.16=pyhd8ed1ab_0
+  - openssl=1.1.1q=h8ffe710_0
+  - pefile=2022.5.30=pyhd8ed1ab_0
+  - pip=21.2.2=py38haa95532_0
+  - pyinstaller=5.1=py38hd0d6af5_0
+  - pyinstaller-hooks-contrib=2022.10=pyhd8ed1ab_0
+  - python=3.8.1=h5fd99cc_8_cpython
+  - python_abi=3.8=2_cp38
+  - pywin32=303=py38h294d835_0
+  - pywin32-ctypes=0.2.0=py38haa244fe_1005
+  - setuptools=58.0.4=py38haa95532_0
+  - sqlite=3.38.0=h2bbff1b_0
+  - vc=14.2=h21ff451_1
+  - vs2015_runtime=14.27.29016=h5e58377_2
+  - wheel=0.37.1=pyhd3eb1b0_0
+  - wincertstore=0.2=py38haa95532_2
+  - pip:
+    - numpy==1.22.3
+    - opencv-contrib-python==4.5.5.64
+    - opencv-python==4.6.0.66
+    - pyside2==5.15.2.1
+    - shiboken2==5.15.2.1
+prefix: D:\Develop\Program\Python\Anaconda3\envs\py381
