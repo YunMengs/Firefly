@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>911</width>
-    <height>858</height>
+    <width>890</width>
+    <height>854</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -138,10 +138,56 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>885</width>
-           <height>459</height>
+           <width>864</width>
+           <height>455</height>
           </rect>
          </property>
+         <widget class="QComboBox" name="comboBoxTask">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>20</y>
+            <width>411</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string extracomment="Test">测试脚本</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>好友对战（限前三位好友）</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>81</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>功能选择</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_2">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>80</y>
+            <width>101</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>好友对战设置</string>
+          </property>
+         </widget>
         </widget>
        </widget>
       </item>
@@ -154,7 +200,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>911</width>
+     <width>890</width>
      <height>26</height>
     </rect>
    </property>

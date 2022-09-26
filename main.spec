@@ -6,10 +6,10 @@ block_cipher = None
 
 a = Analysis(
     ['main.py'],
-    pathex=['D:\\Develop\\Program\\Python\\Anaconda3\\envs\\py381\\Lib\\site-packages\\cv2'],
+    pathex=[],
     binaries=[],
     datas=[],
-    hiddenimports=['PySide2.QtXml'],
+    hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

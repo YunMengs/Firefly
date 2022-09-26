@@ -8,6 +8,11 @@ mv ./dist/main/cv2/* ./dist/main/cv2/cv/
 
 
 
+rm -r ./dist &
+pyinstaller main.py --noconsole  --icon="./img/logo.ico" &
+cp ./img .\dist\main\ -r &
+cp ./main.ui .\dist\main\main.ui
+
 键盘输入命令
 D:/Program/Phone/LDPlayer64/ld.exe -s 0 input keyevent 13
 

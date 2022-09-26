@@ -6,13 +6,12 @@ import time
 import numpy as np
 import win32gui
 import win32con
-import win32api
 from typing import Tuple, Any
 
 import cv2 as cv
 
 from DnPlayer import DnPlayer, UserInfo
-from File import getDocuments
+from model.File import getDocuments
 
 
 class Dnconsole:

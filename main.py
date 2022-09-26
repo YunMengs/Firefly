@@ -10,6 +10,7 @@ from PySide2.QtWidgets import QApplication, QMessageBox, QTableWidgetItem, QAbst
 from PySide2.QtUiTools import QUiLoader
 from Dnconsole import Dnconsole
 from model.func import stop_thread
+from task.FriendTask import FriendTask
 from task.TestTask import TestTask
 
 
@@ -84,10 +85,14 @@ class MainModel:
         """
         dn = Dnconsole
         self.getVM()
-        # dn.set_window_size(self.vm.top_win_handler)
-        start = TestTask(self.vm, self.index)
+        index = self.ui.comboBoxTask.currentIndex()
+        print("index：" + str(index))
+        if index == 1:
+            start = FriendTask(self.vm, self.index)
+        else:
+            start = TestTask(self.vm, self.index)
+
         self.startList[self.index] = start
-        # start.CheckState()
         # 创建线程
         self.threadingtList[self.index] = threading.Thread(target=start.start_game(), args=())
         # 启动线程
