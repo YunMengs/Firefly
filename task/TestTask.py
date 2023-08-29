@@ -81,9 +81,10 @@ class TestTask:
        """
         dn = Dnconsole
         print("结束游戏")
-        dn.touch(self.index, 1275, 260)
+        dn.touch(self.index, 1275, 215)
         time.sleep(self.sleep)
-        dn.touch(self.index, 928, 260)
+        # dn.touch(self.index, 928, 260)
+        dn.touch(self.index, 835, 220)
         self.status = 0
         for thread in self.GameThreading:
             stop_thread(thread)
