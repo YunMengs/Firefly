@@ -66,9 +66,10 @@ class TestTask:
             if self.status == 0:
                 return 1
 
-            dn.touch(self.index, 1275, 260)
+            dn.touch(self.index, 1275, 215)
             time.sleep(self.sleep)
-            dn.touch(self.index, 928, 260)
+            # dn.touch(self.index, 928, 260)
+            dn.touch(self.index, 835, 220)
 
             # 间隔时间 31分钟
             time.sleep(1860)

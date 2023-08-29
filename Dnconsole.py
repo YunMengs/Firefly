@@ -16,11 +16,11 @@ from model.File import getDocuments
 
 class Dnconsole:
     # 请根据自己电脑配置
-    console = r'D:\Develop\Program\Android\LDPlayer4/ldconsole.exe '
-    ld = r'D:\Develop\Program\Android\LDPlayer4/ld.exe '
+    console = r'C:\leidian\LDPlayer64/ldconsole.exe '
+    ld = r'C:\leidian\LDPlayer64/ld.exe '
     # console = r'D:\Program\phone\LDPlayer4/ldconsole.exe '
     # ld = r'D:\Program\phone\LDPlayer4/ld.exe '
-    share_path = getDocuments() + r"/leidian/Pictures"
+    share_path = getDocuments() + r"/leidian64/Pictures"
 
     # 获取模拟器列表
     @staticmethod
