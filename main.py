@@ -112,6 +112,13 @@ class MainModel:
         self.vm = dn.get_one_list(self.index)
 
     def __init__(self):
+        # 读取配置
+        dn = Dnconsole
+        with open('data.json') as f:
+            jdata = json.load(f)
+        print(jdata)
+        dn.console = jdata['console']
+        dn.ld = jdata['ld']
         # 从文件中加载UI定义
         # 从 UI 定义中动态 创建一个相应的窗口对象
         # 注意：里面的控件对象也成为窗口对象的属性了
@@ -125,11 +132,11 @@ class MainModel:
 
         # self.ui.pushButton_3.clicked.connect(lambda: self.add_timer(self.ui.pushButton_3))
 
-        dn = Dnconsole
         vmlist = dn.get_list()
         # 遍历模拟器
         for index in range(len(vmlist)):
             item = vmlist[index]
+            print(index)
             col_1 = QtWidgets.QTableWidgetItem(str(item.index))
             col_2 = QtWidgets.QTableWidgetItem(item.name)
             if item.is_in_android:
@@ -160,6 +167,8 @@ class MainModel:
         self.ui.stopButton.clicked.connect(self.stopButtonHandle)
         self.ui.setupButton.clicked.connect(self.setupButtonHandle)
         self.ui.screenshotButton.clicked.connect(self.screenshotButtonHandle)
+
+
 
 
 app = QApplication([])
