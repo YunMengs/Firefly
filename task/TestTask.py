@@ -72,7 +72,7 @@ class TestTask:
             dn.touch(self.index, 835, 220)
 
             # 间隔时间 31分钟
-            time.sleep(1860)
+            time.sleep(2100)
 
     def game_over(self):
         """
